@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --white: #ffffff;
+      --gray: #333;
+      --blue: #0367a6;
+      --lightblue: #008997;
+      --radius: 0.7rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: clamp(14px, 1.2vw, 16px);
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url("https://i.pinimg.com/736x/1b/ba/ae/1bbaaee93db1222a02017c7fc2b52a71.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 1rem;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 950px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25), 0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+    }
+
+    .left-panel {
+      flex: 1 1 300px;
+      background: url("https://i.pinimg.com/736x/1b/ba/ae/1bbaaee93db1222a02017c7fc2b52a71.jpg") no-repeat center center;
+      background-size: cover;
+      min-height: 250px;
+    }
+
+    .right-panel {
+      flex: 1 1 300px;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      margin-bottom: 1.5rem;
+      color: var(--gray);
+    }
+
+    .input {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(90deg, var(--blue), var(--lightblue));
+      color: var(--white);
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      opacity: 0.95;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .label {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .label a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .label a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+        border-radius: 0.5rem;
+      }
+
+      .left-panel {
+        height: 200px;
+      }
+
+      .right-panel {
+        padding: 2rem 1.5rem;
+      }
+
+      .input,
+      .btn {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      html {
+        font-size: 15px;
+      }
+
+      .container {
+        box-shadow: none;
+        padding: 0;
+      }
+
+      form {
+        max-width: 100%;
+      }
+
+      .right-panel {
+        padding: 1.5rem 1rem;
+      }
+
+      .btn {
+        font-size: 0.95rem;
+      }
+
+      .label {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-panel"></div>
+    <div class="right-panel">
+      <form action="{% url 'signin' %}" method="post">
+        {% csrf_token %}
+        <h1>Sign Up</h1>
+        <input type="text" name="username" class="input" placeholder="User Name" required />
+        <input type="email" name="email" class="input" placeholder="Email" required />
+        <div class="password-wrapper">
+          <input type="password" name="password1" class="input password" placeholder="Password" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" name="password2" class="input password" placeholder="Confirm Password" required />
+          <i class="fas fa-eye toggle-password" onclick="togglePassword(this)"></i>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+        <div class="label">
+          Already have an account? <a href="{% url 'login' %}">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(el) {
+      const input = el.previousElementSibling;
+      if (input.type === "password") {
+        input.type = "text";
+        el.classList.replace("fa-eye", "fa-eye-slash");
+      } else {
+        input.type = "password";
+        el.classList.replace("fa-eye-slash", "fa-eye");
+      }
+    }
+  </script>
+</body>
+</html>

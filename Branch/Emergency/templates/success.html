@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+  
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .success-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeInScale 0.8s ease;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #2ecc71;
+            font-size: 26px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        a {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 17px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 1024px) {
+            .success-container {
+                padding: 35px 30px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            a {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            a {
+                font-size: 15px;
+                padding: 10px 22px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .success-container {
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .success-container {
+                padding: 20px 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            a {
+                font-size: 13px;
+                padding: 8px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-container">
+        <h2>Your appointment has been submitted successfully!</h2>
+        <a href="{% url 'index' %}">Go Back to Home</a>
+    </div>
+</body>
+</html>

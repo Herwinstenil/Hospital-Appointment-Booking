@@ -95,13 +95,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'Your mail id'
-EMAIL_HOST_PASSWORD = 'Your Password'
+EMAIL_HOST_USER = os.getenv('EMAIL_USER', 'herwinstenil24@gmail.com') 
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS', 'qguw fsye evzk xjjj')  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 EMAIL_SUBJECT_PREFIX = '[Appointment Confirmed] '
 
 # Twilio SMS settings
-# TWILIO_ACCOUNT_SID = 'Your Twilio Account SID'
-# TWILIO_AUTH_TOKEN = 'Your Twilio Account Auth Token'
-# TWILIO_PHONE_NUMBER = 'Your Twilio Account Verified Phone Number'
+TWILIO_ACCOUNT_SID = 'AC4ad8cc569bc5dfefe36bdcf3063a8ebf'
+TWILIO_AUTH_TOKEN = '25a84f3619325b7ce11cf523d4ac7e5b'
+TWILIO_PHONE_NUMBER = '+12562421115'

@@ -10,14 +10,13 @@ from .utils import send_appointment_notification
 
 def index(request):
     hospital_logo = BackgroundImage.objects.filter(name__iexact="Hospital Logo").first()
-    booking_logo = BackgroundImage.objects.filter(name__iexact="Booking Logo").first()
     cardio_image = BackgroundImage.objects.filter(name__iexact="Cardio").first()
     neuro_image = BackgroundImage.objects.filter(name__iexact="Neuro").first()
     pedia_image = BackgroundImage.objects.filter(name__iexact="Pedia").first()
     doc_image = BackgroundImage.objects.filter(name__iexact="Doc").first()
     Newdoc_image = BackgroundImage.objects.filter(name__iexact="Newdoc").first()
     Nextdoc_image = BackgroundImage.objects.filter(name__iexact="Nextdoc").first()
-    return render(request, "index.html", {'hospital_logo': hospital_logo, 'booking_logo': booking_logo, 'cardio_image': cardio_image, 'neuro_image': neuro_image, 'pedia_image': pedia_image, 'doc_image': doc_image, 'Newdoc_image': Newdoc_image, 'Nextdoc_image': Nextdoc_image })
+    return render(request, "index.html", {'hospital_logo': hospital_logo, 'cardio_image': cardio_image, 'neuro_image': neuro_image, 'pedia_image': pedia_image, 'doc_image': doc_image, 'Newdoc_image': Newdoc_image, 'Nextdoc_image': Nextdoc_image })
 
 def logout(request):
     auth_logout(request)

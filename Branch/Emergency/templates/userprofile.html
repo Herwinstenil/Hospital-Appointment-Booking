@@ -27,7 +27,6 @@
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -50,7 +49,6 @@
             0% {
                 transform: translateY(0);
             }
-
             100% {
                 transform: translateY(-200px);
             }
@@ -61,26 +59,25 @@
             z-index: 1;
             width: 95%;
             max-width: 600px;
-            margin: 60px auto;
+            margin: 20px auto;
             background: rgba(255, 255, 255, 0.95);
-            padding: 35px 25px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 20px 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             animation: slideFade 1s ease-out;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .appointment-container:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes slideFade {
             from {
-                transform: translateY(40px);
+                transform: translateY(30px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -88,31 +85,33 @@
         }
 
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
             text-align: center;
             color: #004e92;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-label {
             font-weight: 600;
             color: #333;
+            font-size: 0.9rem;
         }
 
         input,
         textarea,
         select {
-            border-radius: 8px !important;
+            border-radius: 6px !important;
             width: 100%;
-            padding: 8px 12px;
+            padding: 6px 10px;
             transition: all 0.2s ease;
+            font-size: 0.9rem;
         }
 
         input:focus,
         textarea:focus,
         select:focus {
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
             border-color: #3498db;
         }
 
@@ -120,54 +119,237 @@
             background-color: #3498db;
             border: none;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 0.95rem;
+            padding: 10px;
         }
 
         .btn-primary:hover {
             background-color: #2980b9;
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .input-group-text {
             font-weight: 600;
             background-color: #f0f0f0;
+            font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        /* Mobile First - 320px and up */
+        @media (min-width: 320px) {
             .appointment-container {
-                padding: 25px 20px;
-                margin: 40px auto;
+                width: 92%;
+                margin: 15px auto;
+                padding: 18px 12px;
             }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .appointment-container {
-                padding: 20px 15px;
-                margin: 30px 10px;
-            }
-
+            
             h2 {
                 font-size: 1.4rem;
+                margin-bottom: 18px;
             }
-
-            .input-group-text {
-                padding: 6px 10px;
-                font-size: 0.9rem;
+            
+            .mb-3 {
+                margin-bottom: 1rem !important;
             }
+        }
 
+        /* 375px - Small Mobile */
+        @media (min-width: 375px) {
+            .appointment-container {
+                width: 90%;
+                padding: 22px 16px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
             input,
             textarea,
             select {
-                font-size: 0.9rem;
+                padding: 7px 11px;
             }
         }
 
-        @media (max-width: 375px) {
+        /* 425px - Medium Mobile */
+        @media (min-width: 425px) {
             .appointment-container {
-                padding: 20px 10px;
+                width: 88%;
+                padding: 25px 20px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .btn-primary {
+                padding: 10px 12px;
+            }
+        }
+
+        /* 768px - Tablet */
+        @media (min-width: 768px) {
+            .appointment-container {
+                width: 85%;
+                max-width: 650px;
+                margin: 40px auto;
+                padding: 35px 30px;
+                border-radius: 15px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .form-label {
+                font-size: 1rem;
+            }
+            
+            input,
+            textarea,
+            select {
+                padding: 8px 12px;
+                font-size: 1rem;
+                border-radius: 8px !important;
+            }
+            
+            .btn-primary {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            
+            .input-group-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* 1024px - Small Desktop */
+        @media (min-width: 1024px) {
+            .appointment-container {
+                width: 80%;
+                max-width: 700px;
+                margin: 50px auto;
+                padding: 40px 35px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .mb-3 {
+                margin-bottom: 1.5rem !important;
+            }
+        }
+
+        /* 1440px - Large Desktop */
+        @media (min-width: 1440px) {
+            .appointment-container {
+                width: 75%;
+                max-width: 750px;
+                margin: 60px auto;
+                padding: 45px 40px;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 35px;
+            }
+            
+            input,
+            textarea,
+            select {
+                padding: 10px 14px;
+                font-size: 1.05rem;
+            }
+            
+            .btn-primary {
+                font-size: 1.1rem;
+                padding: 14px;
+            }
+        }
+
+        /* 2560px - 4K Screens */
+        @media (min-width: 2560px) {
+            .appointment-container {
+                width: 60%;
+                max-width: 900px;
+                margin: 80px auto;
+                padding: 60px 50px;
+                border-radius: 20px;
+            }
+            
+            h2 {
+                font-size: 2.8rem;
+                margin-bottom: 45px;
+            }
+            
+            .form-label {
+                font-size: 1.3rem;
+            }
+            
+            input,
+            textarea,
+            select {
+                padding: 14px 18px;
+                font-size: 1.2rem;
+                border-radius: 10px !important;
+            }
+            
+            .btn-primary {
+                font-size: 1.3rem;
+                padding: 18px;
+                border-radius: 10px;
+            }
+            
+            .input-group-text {
+                font-size: 1.2rem;
+                padding: 14px;
+            }
+            
+            .mb-3 {
+                margin-bottom: 2rem !important;
+            }
+        }
+
+        /* Extra small devices (below 320px) */
+        @media (max-width: 319px) {
+            .appointment-container {
+                width: 98%;
+                margin: 10px auto;
+                padding: 15px 10px;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            input,
+            textarea,
+            select {
+                padding: 5px 8px;
+                font-size: 0.85rem;
+            }
+            
+            .btn-primary {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            .appointment-container {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                margin: 0;
+                width: 100%;
+                max-width: none;
             }
         }
     </style>

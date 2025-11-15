@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Appointment Success</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
-  
         * {
             margin: 0;
             padding: 0;
@@ -20,40 +19,43 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .success-container {
             background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 30px 25px;
+            border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             text-align: center;
             animation: fadeInScale 0.8s ease;
             width: 100%;
-            max-width: 500px;
-            margin: 20px;
+            max-width: 450px;
         }
 
         h2 {
             color: #2ecc71;
-            font-size: 26px;
+            font-size: 22px;
             margin-bottom: 25px;
             line-height: 1.4;
         }
 
         a {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 12px 24px;
             background-color: #3498db;
             color: white;
             text-decoration: none;
             border-radius: 25px;
-            font-size: 17px;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-weight: 600;
         }
 
         a:hover {
             background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes fadeInScale {
@@ -68,24 +70,41 @@
             }
         }
 
-        /* Media Queries */
-
-        @media (max-width: 1024px) {
+        /* 320px - Small Mobile */
+        @media (min-width: 320px) {
             .success-container {
-                padding: 35px 30px;
+                padding: 25px 20px;
+                border-radius: 10px;
             }
 
             h2 {
-                font-size: 24px;
+                font-size: 20px;
+                margin-bottom: 20px;
             }
 
             a {
-                font-size: 16px;
-                padding: 12px 24px;
+                padding: 10px 20px;
+                font-size: 15px;
             }
         }
 
-        @media (max-width: 768px) {
+        /* 375px - Medium Mobile */
+        @media (min-width: 375px) {
+            .success-container {
+                padding: 28px 22px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            a {
+                padding: 11px 22px;
+            }
+        }
+
+        /* 425px - Large Mobile */
+        @media (min-width: 425px) {
             .success-container {
                 padding: 30px 25px;
             }
@@ -95,38 +114,100 @@
             }
 
             a {
-                font-size: 15px;
-                padding: 10px 22px;
+                padding: 12px 24px;
+                font-size: 16px;
             }
         }
 
-        @media (max-width: 576px) {
+        /* 768px - Tablet */
+        @media (min-width: 768px) {
             .success-container {
-                padding: 25px 20px;
+                padding: 40px 35px;
+                border-radius: 15px;
+                max-width: 500px;
             }
 
             h2 {
-                font-size: 20px;
+                font-size: 26px;
+                margin-bottom: 30px;
             }
 
             a {
-                font-size: 14px;
-                padding: 10px 20px;
+                padding: 14px 28px;
+                font-size: 17px;
             }
         }
 
-        @media (max-width: 400px) {
+        /* 1024px - Small Desktop */
+        @media (min-width: 1024px) {
+            .success-container {
+                padding: 45px 40px;
+                max-width: 550px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
+
+            a {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+        }
+
+        /* 1440px - Large Desktop */
+        @media (min-width: 1440px) {
+            .success-container {
+                padding: 50px 45px;
+                max-width: 600px;
+            }
+
+            h2 {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            a {
+                padding: 16px 32px;
+                font-size: 19px;
+            }
+        }
+
+        /* 2560px - 4K Screens */
+        @media (min-width: 2560px) {
+            .success-container {
+                padding: 70px 60px;
+                max-width: 800px;
+                border-radius: 20px;
+            }
+
+            h2 {
+                font-size: 42px;
+                margin-bottom: 50px;
+            }
+
+            a {
+                padding: 20px 40px;
+                font-size: 24px;
+                border-radius: 30px;
+            }
+        }
+
+        /* Extra small devices (below 320px) */
+        @media (max-width: 319px) {
             .success-container {
                 padding: 20px 15px;
             }
 
             h2 {
                 font-size: 18px;
+                margin-bottom: 18px;
             }
 
             a {
-                font-size: 13px;
-                padding: 8px 18px;
+                padding: 9px 18px;
+                font-size: 14px;
             }
         }
     </style>
@@ -138,4 +219,5 @@
         <a href="{% url 'index' %}">Go Back to Home</a>
     </div>
 </body>
+
 </html>

@@ -8,8 +8,9 @@
 
   <!-- Font Awesome for eye icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
-     :root {
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
       --white: #fff;
       --gray: #333;
       --blue: #0367a6;
@@ -28,7 +29,7 @@
       font-size: 16px;
     }
 
-      body {
+    body {
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -38,7 +39,7 @@
       padding: 1rem;
     }
 
-   .container {
+    .container {
       display: flex;
       flex-wrap: wrap;
       width: 100%;
@@ -92,11 +93,11 @@
       box-shadow: 0 0 0 2px rgba(3, 103, 166, 0.1);
     }
 
-      .password-container {
+    .password-container {
       position: relative;
     }
 
-     .toggle-password {
+    .toggle-password {
       position: absolute;
       right: 12px;
       top: 50%;
@@ -134,13 +135,14 @@
     .btn:active {
       transform: scale(0.98);
     }
-      .error-message {
+
+    .error-message {
       text-align: center;
       color: red;
       font-size: 0.95rem;
     }
 
-      /* Mobile-first responsive design */
+    /* Mobile-first responsive design */
 
     /* Extra small devices (320px and below) */
     @media (max-width: 320px) {
@@ -499,7 +501,6 @@
         background: #333;
       }
     }
-    
   </style>
 </head>
 
@@ -517,7 +518,7 @@
             <i class="fa-solid fa-eye" id="eyeIcon"></i>
           </button>
         </div>
-         {% if messages %}
+        {% if messages %}
         {% for message in messages %}
         <p class="error-message">{{ message }}</p>
         {% endfor %}
@@ -527,7 +528,7 @@
     </div>
   </div>
 
-   <!-- Password toggle script -->
+  <!-- Password toggle script -->
   <script>
     function togglePassword() {
       const passwordInput = document.getElementById("password");
@@ -542,4 +543,5 @@
     }
   </script>
 </body>
+
 </html>
